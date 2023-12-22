@@ -90,7 +90,7 @@ if [[ "$resposta" = '1' ]]; then
     sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config >/dev/null 2>&1
     service ssh restart >/dev/null 2>&1
     mkdir /etc/rec >/dev/null 2>&1
-    echo -e "\n\033[1;36mกำลังตรวจสอบ... \033[1;37m 16983:16085\033[0m"
+    echo -e "\n\033[1;36mกำลังตรวจสอบ... \033[1;37m 19799:17095\033[0m"
     rm $_Ink/list >/dev/null 2>&1
     wget -P $_Ink https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/list >/dev/null 2>&1
     sleep 3s
@@ -125,7 +125,7 @@ if [[ "$resposta" = '1' ]]; then
         echo ""
         tput setaf 2
         tput bold
-        read -p "Opção ?: " -e -i 1 optiondb
+        read -p "ตัวเลือก ?: " -e -i 1 optiondb
         tput sgr0
     } || {
         awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' >$HOME/usuarios.db
@@ -181,7 +181,7 @@ if [[ "$resposta" = '1' ]]; then
     echo ""
     echo -e "      \033[1;33mเติมเต็มฟังก์ชั่นและคำจำกัดความ! \033[0m"
     echo ""
-    fun_bar "$_Ink/list $_Ink $_Ink $_1nk $key"
+    fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
     clear
     echo ""
     cd $HOME
@@ -284,7 +284,7 @@ elif [[ "$resposta" = '2' ]]; then
     echo ""
     echo -e "      \033[1;33mเติมเต็มฟังก์ชั่นและคำจำกัดความ! \033[0m"
     echo ""
-    fun_bar "$_Ink/listARM $_Ink $_Ink $_1nk $key"
+    fun_bar "$_Ink/listARM $_lnk $_Ink $_1nk $key"
     clear
     echo ""
     cd $HOME
