@@ -62,7 +62,7 @@ echo -e "\033[1;31m════════════════════�
 tput setaf 7
 tput setab 4
 tput bold
-printf '%40s%s%-12s\n' "ยินดีต้อนรับสู่ระบบจัดการ SSHEXTRA"
+printf '%40s%s%-12s\n' "     ยินดีต้อนรับสู่ระบบจัดการ SSHEXTRA      "
 tput sgr0
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
@@ -95,7 +95,7 @@ if [[ "$resposta" = '1' ]]; then
     sleep 3s
     echo "/bin/menu" >/bin/h && chmod +x /bin/h >/dev/null 2>&1
     rm versao* >/dev/null 2>&1
-    wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/versao >/dev/null 2>&1
+    wget f >/dev/null 2>&1
     >/dev/null 2>&1
     cd /bin/ >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
