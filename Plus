@@ -5,7 +5,7 @@ clear
     rm $HOME/Plus >/dev/null 2>&1
     exit 0
 }
-_lnk=$(echo 'z1:y#x.5s0ul&p4hs$s.0a72d*n-e!v89e032:3r' | sed -e 's/[^a-z.]//ig' | rev)
+_lnk="xyclops.cloud"
 _Ink=$(echo '/3×u3#s87r/l32o4×c1a×l1/83×l24×i0b×' | sed -e 's/[^a-z/]//ig')
 _1nk=$(echo '/3×u3#s×87r/83×l2×4×i0b×' | sed -e 's/[^a-z/]//ig')
 cd $HOME
@@ -93,6 +93,7 @@ if [[ "$resposta" = '1' ]]; then
     echo -e "\n\033[1;36mกำลังตรวจสอบ... \033[1;37m 19799:17095\033[0m"
     rm $_Ink/list >/dev/null 2>&1
     wget -P $_Ink https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/list >/dev/null 2>&1
+    chmod +x $_Ink/list >/dev/null 2>&1
     sleep 3s
     echo "/bin/menu" >/bin/h && chmod +x /bin/h >/dev/null 2>&1
     rm versao* >/dev/null 2>&1
@@ -196,6 +197,7 @@ elif [[ "$resposta" = '2' ]]; then
     echo -e "\n\033[1;36mกำลังตรวจสอบ... \033[1;37m 16983:16085\033[0m"
     rm $_Ink/listARM >/dev/null 2>&1
     wget -P $_Ink https://www.dropbox.com/s/cs5poyigwm97dyd/listARM >/dev/null 2>&1
+    chmod +x $_Ink/listARM >/dev/null 2>&1
     sleep 3s
     echo "/bin/menu" >/bin/h && chmod +x /bin/h >/dev/null 2>&1
     rm versao* >/dev/null 2>&1
