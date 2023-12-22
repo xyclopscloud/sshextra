@@ -180,7 +180,7 @@ if [[ "$resposta" = '1' ]]; then
     echo ""
     echo -e "      \033[1;33mเติมเต็มฟังก์ชั่นและคำจำกัดความ! \033[0m"
     echo ""
-    fun_bar "$_Ink/list $_Ink $_1nk $key"
+    fun_bar "$_Ink/list $_Ink $_Ink $_1nk $key"
     clear
     echo ""
     cd $HOME
@@ -283,7 +283,7 @@ elif [[ "$resposta" = '2' ]]; then
     echo ""
     echo -e "      \033[1;33mเติมเต็มฟังก์ชั่นและคำจำกัดความ! \033[0m"
     echo ""
-    fun_bar "$_Ink/listARM $_Ink $_1nk $key"
+    fun_bar "$_Ink/listARM $_Ink $_Ink $_1nk $key"
     clear
     echo ""
     cd $HOME
