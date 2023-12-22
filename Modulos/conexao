@@ -1998,7 +1998,7 @@ exit 0' >$RCLOCAL
 			echo -e "\n\033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mA PORT \033[1;37m443 \033[1;32mWILL BE USED BY DEFAULT\033[0m\n"
 			echo -ne "\033[1;32mDO YOU REALLY WANT TO INSTALL SSLH \033[1;31m? \033[1;33m[y/n]:\033[1;37m "
 			read resp
-			[[ "$resp" = 's' ]] && {
+			[[ "$resp" = 'y' ]] && {
 				verif_ptrs 443
 				fun_instsslh() {
 					[[ -e "/etc/stunnel/stunnel.conf" ]] && ptssl="$(netstat -nplt | grep 'stunnel' | awk {'print $4'} | cut -d: -f2 | xargs)" || ptssl='3128'
