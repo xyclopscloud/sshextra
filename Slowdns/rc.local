@@ -1,0 +1,16 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script runs at the end of each multi-user runlevel.
+# Make sure the script will "exit 0" on success or whatever
+# value in case of error.
+#
+# To enable or disable this script, simply change the execution
+# bits.
+#
+# By default, this script does nothing.
+iptables -I INPUT -p udp --dport 5300 -j ACCEPT 
+iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
+cd /etc/slowdns && ./startdns
+exit 0
