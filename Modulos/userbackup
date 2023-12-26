@@ -140,7 +140,7 @@ backbot=$1
 	if [[ "$opcao" = '2' ]]; then
 		if [ -f "/root/backup.vps" ]; then
 			[[ -e "/etc/openvpn" ]] && {
-				read -p "The Ovpn certificate will also be restored, do you want to continue? [y/n]: " -e -i s resposta
+				read -p "The Ovpn certificate will also be restored, do you want to continue? [y/n]: " -e -i y resposta
 				[[ "$resposta" = 'y' ]] && {
 					echo ""
 					echo -e "\033[1;36mRestoring backup..."

@@ -43,7 +43,7 @@ echo -e "${RED}$banner${SCOLOR}"
 } || {
     perg=$(echo "${SCOLOR}[y/n]: ")
     echo -e "\n${YELLOW}THE SCRIPT IS ALREADY CONFIGURED WITH A\nSEEVIDOR AND IS READY FOR CONNECTION"
-    read -p "$(echo -e "${GREEN}DO YOU WANT TO CONTINUE WITH THE SAME?${SCOLOR} [y/n]: ")" -e -i s opc
+    read -p "$(echo -e "${GREEN}DO YOU WANT TO CONTINUE WITH THE SAME?${SCOLOR} [y/n]: ")" -e -i y opc
     [[ "$opc" != @(y|Y) ]] && {
         rm $HOME/credenciais dns > /dev/null 2>&1
         rm $PREFIX/bin/slowdns > /dev/null 2>&1
