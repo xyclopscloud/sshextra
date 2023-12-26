@@ -885,7 +885,7 @@ sobremim() {
     msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
     msg+="<b>🤖 BOT SSHEXTRA MANAGER🤖</b>\n"
     msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-    msg+="<b>Developed by:</b> @oxide96\n"
+    msg+="<b>Developed by:</b> @xyclop5\n"
     msg+="<b>Canal Oficial:</b> @SSHEXTRA\n\n"
     msg+="I was created with the purpose of providing information and tools for VPN management on servers🐧 GNU/Linux 🐧.\n\n"
     msg+="<b>Menu:</b> /menu\n"
@@ -1469,7 +1469,7 @@ fun_lim_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "♾ CHANGE RESALE LIMIT ♾\n\nInform its user [Ex: @oxide96]:" \
+            --text "♾ CHANGE RESALE LIMIT ♾\n\nInform its user [Ex: @xyclop5]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
@@ -1515,7 +1515,7 @@ fun_dat_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "📆 CHANGE RESALE DATE 📆\n\nInform its user [Ex: @oxide96]:" \
+            --text "📆 CHANGE RESALE DATE 📆\n\nInform its user [Ex: @xyclop5]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
@@ -1627,7 +1627,7 @@ fun_susp_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "🔒 SUSPEND RESELLER 🔒\n\nInform its user [Ex: @oxide96]:" \
+            --text "🔒 SUSPEND RESELLER 🔒\n\nInform its user [Ex: @xyclop5]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
@@ -1914,7 +1914,7 @@ while :; do
                     sizemax=$(echo -e ${#message_text[$id]})
                     [[ "$sizemax" -gt '10' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "❌ Error !\n\nUse no maximum of 8 characters\n[EX: oxide]")" \
+                            --text "$(echo -e "❌ Error !\n\nUse no maximum of 8 characters\n[EX: xyclops]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -2304,16 +2304,16 @@ while :; do
                     [[ "$_error" == '1' ]] && break
                     echo "Nome: ${message_text[$id]}" >$CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Inform its user [Ex: @oxide96]:' \
+                        --text 'Inform its user [Ex: @xyclop5]:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
-                'Inform its user [Ex: @oxide96]:')
+                'Inform its user [Ex: @xyclop5]:')
                     verifica_acesso
                     [[ "$_error" == '1' ]] && break
                     _VAR1=$(echo -e ${message_text[$id]} | awk -F '@' {'print $2'})
                     [[ -z $_VAR1 ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "❌ Error \n\n⚠️ Inform the user [EX: @oxide96]")" \
+                            --text "$(echo -e "❌ Error \n\n⚠️ Inform the user [EX: @xyclop5]")" \
                             --parse_mode html
                         break
                     }
@@ -2365,7 +2365,7 @@ while :; do
                         --parse_mode html
                     ;;
                     # REMOVE REVENDEDOR
-                '🗑 REMOVER REVENDEDOR 🗑\n\nInform its user [Ex: @oxide96]:')
+                '🗑 REMOVER REVENDEDOR 🗑\n\nInform its user [Ex: @xyclop5]:')
                     echo -e "${message_text[$id]}" >$CAD_ARQ
                     _Var=$(sed -n '1 p' $CAD_ARQ | awk -F '@' {'print $2'})
                     [[ -z $_Var ]] && {
@@ -2378,7 +2378,7 @@ while :; do
                     break
                     ;;
                     # ALTERAR LIMITE
-                '♾ CHANGE RESALE LIMIT ♾\n\nInform its user [Ex: @oxide96]:')
+                '♾ CHANGE RESALE LIMIT ♾\n\nInform its user [Ex: @xyclop5]:')
                     verifica_acesso
                     [[ "$_error" == '1' ]] && break
                     echo -e "Dealer: ${message_text[$id]}" >$CAD_ARQ
@@ -2455,7 +2455,7 @@ while :; do
                         --parse_mode html
                     # ALTERAR DATA
                     ;;
-                '📆 CHANGE RESALE DATE 📆\n\nInform its user [Ex: @oxide96]:')
+                '📆 CHANGE RESALE DATE 📆\n\nInform its user [Ex: @xyclop5]:')
                     verifica_acesso
                     [[ "$_error" == '1' ]] && break
                     _VAR1=$(echo -e ${message_text[$id]} | awk -F '@' {'print $2'})
@@ -2510,7 +2510,7 @@ while :; do
                         --parse_mode html
                     ;;
                     # SUSPENDER REVENDEDOR
-                '🔒 SUSPEND RESELLER 🔒\n\nInform its user [Ex: @oxide96]:')
+                '🔒 SUSPEND RESELLER 🔒\n\nInform its user [Ex: @xyclop5]:')
                     _VAR1=$(echo -e ${message_text[$id]} | awk -F '@' {'print $2'})
                     [[ -z $_VAR1 ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \

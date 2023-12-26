@@ -1,6 +1,6 @@
 #!/bin/bash
 #====================================================
-#	@oxide96
+#	@xyclop5
 #====================================================
 _lvk=$(wget -qO- https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/versao)
 IP=$(wget -qO- ipv4.icanhazip.com)
