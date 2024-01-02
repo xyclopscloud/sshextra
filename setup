@@ -2,7 +2,7 @@
 clear
 [[ "$(whoami)" != "root" ]] && {
     echo -e "\033[1;33m[\033[1;31mข้อผิดพลาด\033[1;33m] \033[1;37m- \033[1;33คุณต้องรันในฐานะรูท\033[0m"
-    rm $HOME/Plus >/dev/null 2>&1
+    rm $HOME/setup >/dev/null 2>&1
     exit 0
 }
 _lnk="xyclops.cloud"
@@ -171,14 +171,14 @@ if [[ "$resposta" = '1' ]]; then
     ufw allow 8080/tcp
     clear
     echo ""
-    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร่อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
+    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร้อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
     echo ""
     echo -e "      \033[1;33mการเพิ่มประสิทธิภาพ PYTHON \033[0m"
     echo ""
     fun_bar 'otimize_python'
     clear
     echo ""
-    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร่อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
+    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร้อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
     echo ""
     echo -e "      \033[1;33mติดตั้งฟังก์ชั่น! \033[0m"
     echo ""
@@ -189,8 +189,8 @@ if [[ "$resposta" = '1' ]]; then
     echo -e "        \033[1;33m • \033[1;32mการติดตั้งเสร็จสมบูรณ์\033[1;33m • \033[0m"
     echo ""
     echo -e "\033[1;31m \033[1;33mคำสั่งหลัก: \033[1;32mmenu\033[0m"
-    echo -e "\033[1;33m ข้อมูลมากกว่านี้ \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@xyclop5\033[0m"
-    rm $HOME/Plus && cat /dev/null >~/.bash_history && history -c
+    echo -e "\033[1;33m ติดต่อสอบถาม \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@xyclop5\033[0m"
+    rm $HOME/setup && cat /dev/null >~/.bash_history && history -c
 elif [[ "$resposta" = '2' ]]; then
     sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config >/dev/null 2>&1
     service ssh restart >/dev/null 2>&1
@@ -275,14 +275,14 @@ elif [[ "$resposta" = '2' ]]; then
     ufw allow 8080/tcp
     clear
     echo ""
-    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร่อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
+    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร้อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
     echo ""
     echo -e "      \033[1;33mการเพิ่มประสิทธิภาพ PYTHON \033[0m"
     echo ""
     fun_bar 'otimize_python'
     clear
     echo ""
-    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร่อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
+    echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mเสร็จเรียบร้อย \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
     echo ""
     echo -e "      \033[1;33mติดตั้งฟังก์ชั่น! \033[0m"
     echo ""
@@ -293,8 +293,8 @@ elif [[ "$resposta" = '2' ]]; then
     echo -e "        \033[1;33m • \033[1;32mการติดตั้งเสร็จสมบูรณ์\033[1;33m • \033[0m"
     echo ""
     echo -e "\033[1;31m \033[1;33mคำสั่งหลัก: \033[1;32mmenu\033[0m"
-    echo -e "\033[1;33m ข้อมูลมากกว่านี้ \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@xyclop5\033[0m"
-    rm $HOME/Plus && cat /dev/null >~/.bash_history && history -c
+    echo -e "\033[1;33m ติดต่อสอบถาม \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@xyclop5\033[0m"
+    rm $HOME/setup && cat /dev/null >~/.bash_history && history -c
 
 else
 

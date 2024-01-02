@@ -1,8 +1,8 @@
 # SSHEXTRA
 
-apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Plus && chmod 777 Plus && ./Plus
+apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/setup && chmod 777 setup && ./setup
 
 
-#Acessa Root
+#Access Root
 
-wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/senharoot.sh && chmod 777 senharoot.sh && ./senharoot.sh
+wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/setuproot.sh && chmod 777 setuproot.sh && ./setuproot.sh

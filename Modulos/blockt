@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
-arq="/etc/Plus-torrent"
+arq="/etc/block-torrent"
 echo -e "\E[44;1;37m           FIREWALL BLOCKING TORRENT           \E[0m"
 echo ""
 if [[ -e "$arq" ]]; then
@@ -136,7 +136,7 @@ iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP' >> $arq
 sleep 2
 chmod +x $arq
-/etc/Plus-torrent > /dev/null
+/etc/block-torrent > /dev/null
 }
 fun_spn2 () {
 	helice () {

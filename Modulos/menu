@@ -192,7 +192,7 @@ menu() {
    }
    #menu2
    menu2() {
-      [[ -e /etc/Plus-torrent ]] && stsf=$(echo -e "\033[1;32m◉ ") || stsf=$(echo -e "\033[1;31m○ ")
+      [[ -e /etc/block-torrent ]] && stsf=$(echo -e "\033[1;32m◉ ") || stsf=$(echo -e "\033[1;31m○ ")
       stsbot=$(ps x | grep "bot_plus" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
       stsbotteste=$(ps x | grep "bot_teste" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
       stsbotrev=$(ps x | grep "bot_rev" | grep -v grep >/dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
