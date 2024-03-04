@@ -74,14 +74,14 @@ backbot=$1
 				echo -e "\033[1;32mOvpn certificate located...\033[0m"
 				rm -rf $HOME/backup.vps >/dev/null 2>&1
 				sleep 1
-				tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray /etc/openvpn >/dev/null 2>&1
 				echo ""
 				echo -e "\033[1;32mBACKUP CREATED SUCCESSFULLY !\033[0m"
 				echo ""
 			} || {
 				rm -rf $HOME/backup.vps >/dev/null 2>&1
 				sleep 1
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray >/dev/null 2>&1
 				echo ""
 				echo -e "\033[1;32mBACKUP CREATED SUCCESSFULLY !\033[0m"
 				echo ""
@@ -116,7 +116,7 @@ backbot=$1
 				echo ""
 				echo -e "\033[1;32mCreating backup...\033[0m"
 				echo ""
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray /etc/openvpn >/dev/null 2>&1
 				sleep 2s
 				echo ""
 				echo -e "\033[1;33mThe file \033[1;32mbackup.vps"
@@ -126,7 +126,7 @@ backbot=$1
 				echo ""
 				echo -e "\033[1;32mCreating backup...\033[0m"
 				echo ""
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray >/dev/null 2>&1
 				sleep 2s
 				echo ""
 				echo -e "\033[1;33mThe file \033[1;32mbackup.vps"
@@ -195,7 +195,7 @@ backbot=$1
 	fi
 } || {
 	rm /root/backup.vps 1>/dev/null 2>/dev/null
-	tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot /etc/SSHExtra/senha /etc/SSHExtra/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+	tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot /etc/SSHExtra/senha /etc/SSHExtra/v2ray /etc/openvpn >/dev/null 2>&1
 	[[ -d "/etc/SSHExtra/backups" ]] && mv /root/backup.vps /etc/SSHExtra/backups/backup.vps
 	exit
 }
