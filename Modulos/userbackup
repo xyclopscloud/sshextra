@@ -81,7 +81,7 @@ backbot=$1
 			} || {
 				rm -rf $HOME/backup.vps >/dev/null 2>&1
 				sleep 1
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray >/dev/null 2>&1
+				tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHExtra/senha /etc/SSHExtra/v2ray >/dev/null 2>&1
 				echo ""
 				echo -e "\033[1;32mBACKUP CREATED SUCCESSFULLY !\033[0m"
 				echo ""
