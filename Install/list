@@ -86,7 +86,7 @@ crontab -r >/dev/null 2>&1
 	echo "@reboot /etc/autostart"
 	echo "* * * * * /etc/autostart"
 	echo "0 */6 * * * /bin/uexpired"
-	echo "*/30 * * * * /bin/autoressl"
+	echo "*/5 * * * * /bin/autoressl >> /root/logs/autoressl 2>&1"
 ) | crontab -
 echo "$_lvk" | sed -n '1 p' | cut -d' ' -f2 >/bin/versao && cat /bin/versao >/home/sshextra
 wget https://github.com/xyclopscloud/sshextra/raw/main/Install/jq-linux64 >/dev/null 2>&1
