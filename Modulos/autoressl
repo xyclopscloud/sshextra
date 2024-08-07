@@ -4,59 +4,64 @@ port=$(netstat -nplt | grep 'stunnel' | awk {'print $4'} | cut -d: -f2 | xargs)
 porta='443'
 portssl='22'
 
+verif_ptrs() {
+    PT=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" | grep -v "COMMAND" | grep "LISTEN")
+    for pton in $(echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq); do
+        svcs=$(echo -e "$PT" | grep -w "$pton" | awk '{print $1}' | uniq)
+        [[ "$porta" = "$pton" ]] && {
+            exit 0
+        }
+    done
+}
+
 inst_ssl() {
     if netstat -nltp | grep 'stunnel4' 1>/dev/null 2>/dev/null; then
         [[ $(netstat -nltp | grep 'stunnel4' | wc -l) != '0' ]] && sslt=$(netstat -nplt | grep stunnel4 | awk {'print $4'} | awk -F ":" {'print $2'} | xargs) || sslt="\033[1;31mINDISPONIVEL"
         exit 0
     else
 
-        verif_ptrs $porta
+        verif_ptrs
 
-        fun_bar 'apt-get update -y' 'apt-get install stunnel4 -y'
+        apt-get install stunnel4 -y &>/dev/null
 
-        ssl_conf() {
-            echo -e "cert = /etc/stunnel/stunnel.pem\nclient = no\nsocket = a:SO_REUSEADDR=1\nsocket = l:TCP_NODELAY=1\nsocket = r:TCP_NODELAY=1\n\n[stunnel]\nconnect = 127.0.0.1:${portssl}\naccept = ${porta}" >/etc/stunnel/stunnel.conf
-        }
-        fun_bar 'ssl_conf'
-        ssl_certif() {
-            crt='EC'
-            openssl genrsa -out key.pem 2048 >/dev/null 2>&1
-            (
-                echo $crt
-                echo $crt
-                echo $crt
-                echo $crt
-                echo $crt
-                echo $crt
-                echo $crt
-            ) | openssl req -new -x509 -key key.pem -out cert.pem -days 1050 >/dev/null 2>&1
-            cat cert.pem key.pem >>/etc/stunnel/stunnel.pem
-            rm key.pem cert.pem >/dev/null 2>&1
-            sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-        }
-        fun_bar 'ssl_certif'
+        echo -e "cert = /etc/stunnel/stunnel.pem\nclient = no\nsocket = a:SO_REUSEADDR=1\nsocket = l:TCP_NODELAY=1\nsocket = r:TCP_NODELAY=1\n\n[stunnel]\nconnect = 127.0.0.1:${portssl}\naccept = ${porta}" >/etc/stunnel/stunnel.conf
 
-        fun_finssl() {
-            service stunnel4 restart
-            service ssh restart
-            /etc/init.d/stunnel4 restart
-        }
-        fun_bar 'fun_finssl' 'service stunnel4 restart'
+        crt='EC'
+        openssl genrsa -out key.pem 2048 >/dev/null 2>&1
+        (
+            echo $crt
+            echo $crt
+            echo $crt
+            echo $crt
+            echo $crt
+            echo $crt
+            echo $crt
+        ) | openssl req -new -x509 -key key.pem -out cert.pem -days 1050 >/dev/null 2>&1
+        cat cert.pem key.pem >>/etc/stunnel/stunnel.pem
+        rm key.pem cert.pem >/dev/null 2>&1
+        sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+
+        systemctl restart stunnel4 &>/dev/null
+        systemctl restart ssh &>/dev/null
+        /etc/init.d/stunnel4 restart &>/dev/null
+
+        systemctl restart stunnel4 &>/dev/null
 
         cd /etc/stunnel/
         rm -rf stunnel.conf
         rm -rf stunnel.pem
-        wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/cert
-        wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/key
-        wget https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/stunnel
+        wget -q https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/cert &>/dev/null
+        wget -q https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/key &>/dev/null
+        wget -q https://raw.githubusercontent.com/xyclopscloud/sshextra/main/Install/stunnel &>/dev/null
         mv cert cert.pem
         mv key key.pem
         mv stunnel stunnel.conf
         chmod 777 cert.pem
         chmod 777 key.pem
         chmod 777 stunnel.conf
-        service stunnel4 restart
-        cd $HOME
+        systemctl restart stunnel4 &>/dev/null
+
+        echo resinstall_$(date +%Y%m%d)
         exit 0
     fi
 }
